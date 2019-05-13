@@ -1,24 +1,30 @@
-function divisor()
+function div()
 {
-    let a = document.getElementById("i");
-    let b = document.getElementById("o");
+    let a = document.getElementById("a");
+    let b = document.getElementById("b");
     let resultado = document.getElementById("resultado");
-
+    var result = "O resultado é";
     let va = parseInt(a.value);
     let vb = parseInt(b.value);
-    if(va<vb){
-        let c = va;
-        va = vb;
-        vb = c;
+    if(vb>va){
+      var bolha = va;
+      va = vb;
+      vb = bolha;
     }
-    while(vr!=0){
-        let vr = va%vb;
-        va=vb;
-        vb=vr
-        if(vr>0){
-            let r = vr;
-        }
-        
+    var i = va%vb;
+    result += i ;
+    va=vb;
+    vb=i;
+    while(i > 0){
+      i = va%vb;
+      if(i!=0){
+        result += "," + i ;
+      }
+      va=vb;
+      vb=i;
+      
     }
-    resultado.textContent = r;
+    result += ".";
+   
+    resultado.textContent = result;
 }
